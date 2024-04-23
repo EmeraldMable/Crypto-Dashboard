@@ -1,30 +1,272 @@
+
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  color-scheme: light dark;
+  color: #000000;
+  background-color:#ffffff ;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
 #root {
-  max-width: 1280px;
   margin: 0 auto;
-  padding: 2rem;
   text-align: center;
+  
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.ibm-plex-sans-condensed-thin {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 100;
+  font-style: normal;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
+.ibm-plex-sans-condensed-regular {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ibm-plex-sans-condensed-semibold {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 600;
+  font-style: normal;
+}
+
+.ibm-plex-sans-condensed-bold {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-style: normal;
+}
+.ibm-plex-sans-condensed-medium-italic {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 500;
+  font-style: italic;
+}
+.ibm-plex-sans-condensed-bold-italic {
+  font-family: "IBM Plex Sans Condensed", sans-serif;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
+.nav{
+  height: 60px;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+
+}
+#menu{
+  width: 40px;
+  height: 30px;
+  background-color:transparent;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 5px;
+  margin-top: 5px;
+  transition: transform .2s ease-in-out;
+}
+
+.first-bar , .second-bar{
+  width: 13px;
+  height: 2px;
+  margin: 3px 0;
+  background-color: #010101;
+  transform: translateX(10px);
+ 
+}
+.second-bar{
+  width: 19px;
+  
+}
+#menu:hover{
+  transform: scale(1.5);
+}
+#logo{
+  color:#000000;
+}
+#logo span{
+  font-size: 30px;
+  position: relative;
+}
+#logo span::before{
+  content: '';
+  width: 60px;
+  height: 2.3px;
+  background-color: #000000;
+  position: absolute;
+  top: 9.2px;
+  left: -60px;
+}
+#logo-small{
+  color:white;
+}
+#logo-small span{
+  font-size: 30px;
+  position: relative;
+}
+#logo-small span::before{
+  content: '';
+  width: 60px;
+  height: 1.5px;
+  background-color: white;
+  position: absolute;
+  top: 9px;
+  transform: translate(2px,0px);
+  left: -60px;
+}
+.searchbox{
+  background-color: #d7d7d7;
+  height: 30px;
+  border-radius: 20px;
+}
+.searchbox input{
+  background-color:transparent ;
+  outline: none;
+  height: 30px;
+}
+.searchbox input::placeholder{
+  color: #000000;
+}
+.sidebar{
+  width: 100%;
+  min-height: 100vh;
+  position: absolute;
+  top:0;
+  left: 0;
+
+}
+.leftside{
+  background-color: black;
+  color: white;
+}
+.tooltip{
+  display: none;
+  position: absolute;
+  background-color: black;
+  color:white;
+  top:35px;
+  left: -15px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.tooltip2{
+  display: none;
+  position: absolute;
+  background-color: black;
+  color:white;
+  top:35px;
+  left: -5px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.tooltip3{
+  display: none;
+  position: absolute;
+  background-color: black;
+  color:white;
+  top:35px;
+  left: 3px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.tooltip4{
+  display: none;
+  position: absolute;
+  background-color: black;
+  color:white;
+  top:35px;
+  left: -6px;
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.icon:hover .tooltip{
+  display: block;
+}
+.icon2:hover .tooltip2{
+  display: block;
+}
+.icon3:hover .tooltip3{
+  display:block
+}
+.icon4:hover .tooltip4{
+  display:block
+}
+.linkbox:hover .link{
+  transform: translateX(20px);
+}
+.triangle{
+  position: relative;
+}
+.triangle::before{
+  content:'';
+  position:absolute;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #000000;
+  top:22px;
+  left: -10px;
+}
+
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    color: #ffffff;
+    background-color: #000000;
   }
-  to {
-    transform: rotate(360deg);
+ 
+  .first-bar, .second-bar{
+    background-color: #ffffff;
   }
+ 
+  #logo{
+    color:#f9f9f9;
+  }
+  #logo span::before{
+   
+    background-color: #ffffff;
+   
+  }
+  #logo-small{
+    color:black;
+    
+  }
+  #logo-small span{
+    font-size: 30px;
+ 
+  }
+  #logo-small span::before{
+    
+    background-color: black;
+    
+  }
+  .searchbox{
+    background-color: #2b2b2b;
+  }
+  .searchbox input{
+    background-color: transparent;
+  }
+  .searchbox input::placeholder{
+    color:white
+  }
+  .leftside{
+    background-color: white;
+    color: black;
+  }
+  
+  
 }
 
 @media (prefers-reduced-motion: no-preference) {
