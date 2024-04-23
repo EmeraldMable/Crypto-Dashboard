@@ -1,4 +1,4 @@
-import { useState, createContext } from "react";
+import { useState, createContext, useEffect } from "react";
 
 type StateContextProviderProps = {
     children:React.ReactNode
@@ -11,6 +11,8 @@ type StateContextType = {
     setSearch:React.Dispatch<React.SetStateAction<string>>
     clicksearch:boolean
     setClicksearch: React.Dispatch<React.SetStateAction<boolean>>
+    mode:any,
+    setMode: React.Dispatch<React.SetStateAction<any>>
 }
 
 export const StateContext = createContext<StateContextType | null>(null)
@@ -19,6 +21,14 @@ export const ContextProvider = ({children}:StateContextProviderProps) => {
     const [sidebar , setSidebar] = useState(false)
     const [search, setSearch] = useState('')
     const [clicksearch, setClicksearch] = useState(false)
+
+   const selectedTheme = localStorage.getItem('theme')
+   const [mode, setMode] = useState(selectedTheme)
+   
+
+   useEffect(() => {
+     document.querySelector('#root')?.setAttribute('data-theme' , `${selectedTheme}`)
+   },[])
     return (
         <StateContext.Provider value={{
             sidebar, 
@@ -26,7 +36,9 @@ export const ContextProvider = ({children}:StateContextProviderProps) => {
             search,
             setSearch,
             clicksearch,
-            setClicksearch
+            setClicksearch,
+            mode,
+            setMode
         }}>
             {children}
         </StateContext.Provider>

@@ -6,7 +6,24 @@ import { useContext } from "react";
 const Sidebar = () => {
 
   const sidebar = useContext(StateContext)
+  console.log(sidebar?.mode)
 
+  const chosenMode = (value: string) :boolean => sidebar?.mode === value
+
+  const handleMode = (e: React.ChangeEvent<HTMLInputElement>) :void=> {
+    sidebar?.setMode(e.currentTarget.value)
+    if(sidebar?.mode === 'light'){
+        document.querySelector('#root')?.setAttribute('data-theme' , 'dark')
+        localStorage.setItem('theme' , 'dark')
+    }else{
+        document.querySelector('#root')?.setAttribute('data-theme' , 'light')
+        localStorage.setItem('theme' , 'light')
+    }
+  }
+
+ 
+
+ 
   return (
     <>
     {  sidebar?.sidebar ?
@@ -19,7 +36,9 @@ const Sidebar = () => {
         <span>T</span></h2>
 
         <div className="ibm-plex-sans-condensed-regular flex flex-col mx-6 md:mx-6 lg:mx-12 my-5 md:text-lg">
-            <NavLink to='/' className={({isActive}) => isActive ? 'triangle translate-x-4 p-3' : ' hover:translate-x-6 p-3'}>
+            <NavLink to='/' 
+            onClick={()=> sidebar.setSidebar(false)}
+            className={({isActive}) => isActive ? 'triangle translate-x-4 p-3' : ' hover:translate-x-6 p-3'}>
                 Dashboard
             </NavLink>
            
@@ -40,7 +59,21 @@ const Sidebar = () => {
                 Log Out
             </NavLink>
         </div>
-       
+           <div className=" mx-4 md:mx-4 lg:mx-6 md:text-lg">
+            <span className="ibm-plex-sans-condensed-semibold block">Theme</span>
+           <div className="ibm-plex-sans-condensed-regular flex flex-col justify-center">
+               <div className="mb-3 mt-3">
+               <input type="radio" id="radio" value='light' name="mode" 
+                checked={chosenMode('light')}
+                onChange={handleMode} /> Light Mode
+               </div>
+               <div>
+               <input type="radio" id="radio" value='dark'
+               checked={chosenMode('dark')}
+                name="mode" onChange={handleMode}/> Dark Mode
+               </div>
+           </div>
+           </div>
         </div>
        <div className=' bg-transparent flex-1 '> </div>
        

@@ -29,7 +29,7 @@ const Nav = () => {
         className="hover:scale-125"
         onClick={() => states?.setClicksearch(!states.clicksearch)}/>
 
-        <input type="text" className="ibm-plex-sans-condensed-regular w-32 md:w-56 lg:w-72"
+        <input type="text" id="textbox" className="ibm-plex-sans-condensed-regular w-32 md:w-56 lg:w-72"
         placeholder="Search"
         value={states?.search} onChange={(e) => states?.setSearch(e.target.value) }/>
         </div>

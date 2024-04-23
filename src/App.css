@@ -8,20 +8,33 @@
 
 
 :root {
-  color-scheme: light dark;
-  color: #000000;
-  background-color:#ffffff ;
-
+  
+  --color: #000000;
+  --background-color:#ffffff ;
+  --searchbox-color:#d4d3d3;
+  --sidebar-backgroundColor:#000000;
+  --menu-backgroundColor:#000000;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
+[data-theme='dark']{
+  
+    --color: #ffffff;
+    --background-color: #000000;
+    --searchbox-color:#2b2b2b;
+    --sidebar-backgroundColor:#ffffff;
+    --menu-backgroundColor:#ffffff;
+}
+
 #root {
   margin: 0 auto;
+  min-height: 100vh;
   text-align: center;
-  
+  background-color: var(--background-color);
+  color: var(--color);
 }
 
 .ibm-plex-sans-condensed-thin {
@@ -82,7 +95,7 @@
   width: 13px;
   height: 2px;
   margin: 3px 0;
-  background-color: #010101;
+  background-color: var(--menu-backgroundColor);
   transform: translateX(10px);
  
 }
@@ -94,7 +107,7 @@
   transform: scale(1.5);
 }
 #logo{
-  color:#000000;
+  color:var(--color);
 }
 #logo span{
   font-size: 30px;
@@ -104,13 +117,13 @@
   content: '';
   width: 60px;
   height: 2.3px;
-  background-color: #000000;
+  background-color: var(--menu-backgroundColor);
   position: absolute;
   top: 9.2px;
   left: -60px;
 }
 #logo-small{
-  color:white;
+  color:var(--background-color);
 }
 #logo-small span{
   font-size: 30px;
@@ -120,24 +133,24 @@
   content: '';
   width: 60px;
   height: 1.5px;
-  background-color: white;
+  background-color: var(--background-color);
   position: absolute;
   top: 9px;
   transform: translate(2px,0px);
   left: -60px;
 }
 .searchbox{
-  background-color: #d7d7d7;
+  background-color:var(--searchbox-color);
   height: 30px;
   border-radius: 20px;
 }
-.searchbox input{
+#textbox{
   background-color:transparent ;
   outline: none;
   height: 30px;
 }
-.searchbox input::placeholder{
-  color: #000000;
+#textbox::placeholder{
+  color: var(--color);
 }
 .sidebar{
   width: 100%;
@@ -148,14 +161,15 @@
 
 }
 .leftside{
-  background-color: black;
-  color: white;
+  background-color: var(--sidebar-backgroundColor);
+  color: var(--background-color);
 }
+
 .tooltip{
   display: none;
   position: absolute;
-  background-color: black;
-  color:white;
+  background-color: var(--menu-backgroundColor);
+  color:var(--background-color);
   top:35px;
   left: -15px;
   padding: 3px 6px;
@@ -164,8 +178,8 @@
 .tooltip2{
   display: none;
   position: absolute;
-  background-color: black;
-  color:white;
+  background-color: var(--menu-backgroundColor);
+  color:var(--background-color);
   top:35px;
   left: -5px;
   padding: 3px 6px;
@@ -174,8 +188,8 @@
 .tooltip3{
   display: none;
   position: absolute;
-  background-color: black;
-  color:white;
+  background-color: var(--menu-backgroundColor);
+  color:var(--background-color);
   top:35px;
   left: 3px;
   padding: 3px 6px;
@@ -184,8 +198,8 @@
 .tooltip4{
   display: none;
   position: absolute;
-  background-color: black;
-  color:white;
+  background-color: var(--menu-backgroundColor);
+  color:var(--background-color);
   top:35px;
   left: -6px;
   padding: 3px 6px;
@@ -215,59 +229,16 @@
   width: 10px;
   height: 10px;
   border-radius: 50%;
-  background-color: #000000;
+  background-color: var(--background-color);
   top:22px;
   left: -10px;
 }
-
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    color: #ffffff;
-    background-color: #000000;
-  }
- 
-  .first-bar, .second-bar{
-    background-color: #ffffff;
-  }
- 
-  #logo{
-    color:#f9f9f9;
-  }
-  #logo span::before{
-   
-    background-color: #ffffff;
-   
-  }
-  #logo-small{
-    color:black;
-    
-  }
-  #logo-small span{
-    font-size: 30px;
- 
-  }
-  #logo-small span::before{
-    
-    background-color: black;
-    
-  }
-  .searchbox{
-    background-color: #2b2b2b;
-  }
-  .searchbox input{
-    background-color: transparent;
-  }
-  .searchbox input::placeholder{
-    color:white
-  }
-  .leftside{
-    background-color: white;
-    color: black;
-  }
-  
-  
+#radio{
+  accent-color: var(--background-color);
+  background-color: var(--background-color);
+  border: 2px solid var(--menu-backgroundColor);
 }
+
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
@@ -275,10 +246,3 @@
   }
 }
 
-.card {
-  padding: 2em;
-}
-
-.read-the-docs {
-  color: #888;
-}
