@@ -4,6 +4,7 @@ import { CiMail } from "react-icons/ci";
 import { MdNotifications } from "react-icons/md";
 import { useContext } from "react";
 import { StateContext } from "../context/contextProvider";
+import { Link } from "react-router-dom";
 
 
 const Nav = () => {
@@ -16,7 +17,9 @@ const Nav = () => {
             <span className="first-bar"></span>
             <span className="second-bar"></span>
         </div>
-        <h2 id="logo" className="ibm-plex-sans-condensed-regular hidden md:block lg:block  text-xl mx-0">CRYPTO NEX
+        <h2 id="logo" className="ibm-plex-sans-condensed-regular hidden md:block lg:block  text-xl mx-0"
+        >
+          Step to NEX
         <span>T</span></h2>
 
         <div className="flex absolute right-5 md:right-10 lg:right-10 items-center ">
@@ -49,9 +52,15 @@ const Nav = () => {
           </div>
         
         <div className="icon3 relative">
-        <MdNotifications size={26} style={{marginLeft:'8px' , marginRight:'8px'}} 
-        className="hover:scale-125 transition-transform ease-in-out"/>
-        <p className="tooltip3">Noti</p>
+         
+          <div>
+          <p className="noti-nu absolute -top-1 left-5">3</p>
+          <Link to='/noti'>
+          <MdNotifications size={26} style={{marginLeft:'8px' , marginRight:'8px'}} 
+          className="hover:scale-125 transition-transform ease-in-out"/>
+         </Link>
+        </div>
+        <p className="tooltip3" >Noti</p>
         </div>
         <div className="icon4 relative">
         <div className=" w-10 rounded-full relative hover:scale-125 dark:border-white transition-transform ease-in-out">

@@ -9,37 +9,44 @@
 
 :root {
   
-  --color: #000000;
-  --background-color:#ffffff ;
+  --color: #272626;
+  --background-color:#f4f2f2 ;
   --searchbox-color:#d4d3d3;
-  --sidebar-backgroundColor:#000000;
-  --menu-backgroundColor:#000000;
+  --sidebar-backgroundColor:rgba(39, 38, 38,.8);
+  --menu-backgroundColor:#272626;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  --shadow-color:#272626;
+  --girdnumber-color:#272626;
+  --monitor-color:rgba(2,1,1,0.7)
+
+  
 }
 
 [data-theme='dark']{
   
-    --color: #ffffff;
-    --background-color: #000000;
+    --color: #f4f2f2;
+    --background-color: #272626;
     --searchbox-color:#2b2b2b;
-    --sidebar-backgroundColor:#ffffff;
+    --sidebar-backgroundColor:rgba(255, 255, 255,.7);
     --menu-backgroundColor:#ffffff;
+    --shadow-color:rgb(132, 126, 126);
+    --gridnumber-color:#272626;
+    --monitor-color:rgb(148,163,184)
 }
 
 #root {
-  margin: 0 auto;
   min-height: 100vh;
-  text-align: center;
   background-color: var(--background-color);
   color: var(--color);
+  
 }
 
 .ibm-plex-sans-condensed-thin {
   font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-weight: 100;
+  font-weight: 400;
   font-style: normal;
 }
 
@@ -62,7 +69,7 @@
 }
 .ibm-plex-sans-condensed-medium-italic {
   font-family: "IBM Plex Sans Condensed", sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
 }
 .ibm-plex-sans-condensed-bold-italic {
@@ -70,7 +77,6 @@
   font-weight: 700;
   font-style: italic;
 }
-
 
 .nav{
   height: 60px;
@@ -158,13 +164,34 @@
   position: absolute;
   top:0;
   left: 0;
+  z-index: 10000;
+}
+.fc-multiMonthYear-view{
 
+  color: var(--girdnumber-color);
+}
+.fc-multimonth-header-table{
+  color:var(--color);
+}
+.fc-list-day-text{
+  color:black
 }
 .leftside{
   background-color: var(--sidebar-backgroundColor);
+  backdrop-filter: blur(20px);
   color: var(--background-color);
 }
-
+.noti-nu{
+  background-color: var(--background-color);
+  width: 16px;
+  font-size: 10px;
+  border-radius: 50%;
+  color: var(--menu-backgroundColor);
+  border: 2px solid var(--menu-backgroundColor);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .tooltip{
   display: none;
   position: absolute;
@@ -233,16 +260,120 @@
   top:22px;
   left: -10px;
 }
+
 #radio{
-  accent-color: var(--background-color);
+  accent-color: rgb(24, 24, 24);
   background-color: var(--background-color);
   border: 2px solid var(--menu-backgroundColor);
 }
-
+.monitor-card{
+  width: 100%;
+  overflow-x: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  
+}
+.monitor-card::--webkit-scrollbar{
+  display: none;
+}
+.card{
+  backdrop-filter: blur(20px);
+  background-color: var(--monitor-color);
+  color:white;
+  transition: transform .2s ease-in-out;
+}
+.card:hover{
+  transform: scale(0.9);
+}
+.list{
+  background-color: var(--monitor-color);
+  border: 4px solid var(--monitor-color);
+  border-radius: 10px;
+}
+.list:hover{
+  transform: scale(0.8);
+}
+.addtodo{
+  background-color: var(--menu-backgroundColor);
+  color: var(--background-color);
+  border-bottom: 1px solid var(--background-color) ;
+  padding: 10px;
+}
+.schedule-tooltip{
+  position: absolute;
+  bottom: -40px;
+  background-color: var(--color);
+  color: var(--background-color);
+  padding: 3px 6px;
+  border-radius: 5px;
+  display: none;
+}
+.list:hover{
+  transition: transform .2s ease-in-out;
+}
+.list:hover .schedule-tooltip{
+  display: block;
+}
+.data{
+    overflow-x: auto;
+}
+.line-chart{
+ min-width: 500px;
+  height: 500px ;
+}
+.link-tooltip{
+  display: none;
+  background-color: var(--color);
+  color: var(--background-color);
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+.data-link{
+  transition: transform .2s ease-in-out;
+}
+.data-link:hover{
+  transform: scale(0.8);
+}
+.data-link:hover .link-tooltip{
+  display:block ;
+}
+.MuiDataGrid-columnHeaders{
+  background-color: var(--monitor-color);
+  
+}
+.MuiDataGrid-root{
+  border:'none'
+}
+.MuiDataGrid-cell{
+  border-bottom: 'none';
+  color:var(--color)
+}
+.MuiToolbar-root{
+  color: var(--color);
+}
+.MuiSvgIcon-root{
+  color: var(--color);
+}
 
 @media (prefers-reduced-motion: no-preference) {
   a:nth-of-type(2) .logo {
     animation: logo-spin infinite 20s linear;
   }
+}
+@media (width<870px){
+  .fc-header-toolbar{
+    display: flex;
+    flex-direction: column;
+  }
+  .fc-toolbar-chunk{
+    display: flex;
+   flex-direction: column;
+   gap: 4px;
+   margin-top: 5px;
+  }
+ .fc-button-group button{
+  width: 100%;
+  background-color: var(--color);
+ }
 }
 

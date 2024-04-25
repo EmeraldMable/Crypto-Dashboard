@@ -12,19 +12,43 @@ type StateContextType = {
     clicksearch:boolean
     setClicksearch: React.Dispatch<React.SetStateAction<boolean>>
     mode:any,
-    setMode: React.Dispatch<React.SetStateAction<any>>
+    setMode: React.Dispatch<React.SetStateAction<any>>;
+    date: any
+    setDate: React.Dispatch<any>
+    events: any
+    setEvents: React.Dispatch<React.SetStateAction<any>>
+}
+
+function getDate() {
+    const today = new Date()
+    const month = today.getMonth() + 1
+    const year = today.getFullYear()
+    const date = today.getDate()
+    return `${month}/${date}/${year}`
 }
 
 export const StateContext = createContext<StateContextType | null>(null)
 
 export const ContextProvider = ({children}:StateContextProviderProps) => {
+    const eventData = [
+        {
+            id:'1',
+            title:'Morning Meeting',
+            start:'2024-04-30'
+        },
+        {
+            id:'2',
+            title:'Report',
+            start:'2024-04-28'
+        }
+    ]
     const [sidebar , setSidebar] = useState(false)
     const [search, setSearch] = useState('')
     const [clicksearch, setClicksearch] = useState(false)
-
+    const [date, setDate] = useState(getDate())
    const selectedTheme = localStorage.getItem('theme')
    const [mode, setMode] = useState(selectedTheme)
-   
+    const [events, setEvents] = useState(eventData)
 
    useEffect(() => {
      document.querySelector('#root')?.setAttribute('data-theme' , `${selectedTheme}`)
@@ -38,7 +62,11 @@ export const ContextProvider = ({children}:StateContextProviderProps) => {
             clicksearch,
             setClicksearch,
             mode,
-            setMode
+            setMode,
+            date, 
+            setDate,
+            events, 
+            setEvents
         }}>
             {children}
         </StateContext.Provider>
