@@ -53,8 +53,8 @@ const links = [
    
     {
         id:'5',
-        name:'Mail',
-        route:'/mail'
+        name:'Messages',
+        route:'/messages'
     },
     ,
     {
@@ -294,7 +294,7 @@ const GraphData = [
     }
   ]
   const rows = [
-    { id: 1, lastName: 'Snow', firstName: 'Jon', age: 14 , status:'Sale Manager' , Email:'Snowy2398@gmail.com' },
+    { id: 1, lastName: 'Snow', firstName: 'Jone', age: 14 , status:'Sale Manager' , Email:'Snowy2398@gmail.com' },
     { id: 2, lastName: 'Lannister', firstName: 'Cersei', age: 31 , status:'Executive Assistant' , Email:'cersei@gmail.com' },
     { id: 3, lastName: 'Lannister', firstName: 'Jaime', age: 31 ,status:'Administrative Assistant' , Email:'jaime@gmail.com' },
     { id: 4, lastName: 'Stark', firstName: 'Arya', age: 11 , status:'Events Administrator' , Email:'arya@gmail.com' },
@@ -359,6 +359,87 @@ const GraphData = [
       }
     }
   ];
-  
 
-export {monitorData , links , GraphData , rows , columns}
+  const messages = [
+    {
+      id:'1',
+      from : 'Susan Jone',
+      message:'Please prepare refreshment for tomorrow meeting.',
+      date:'2024-04-27',
+      time:'1:00 PM',
+      seen:true
+    },
+    {
+      id:'2',
+      from :'Lannister Cersei',
+      message:'Kindly reminding you to post Friday report.',
+      date:'2024-04-26',
+      time:'3:00 PM',
+      seen:false
+    },
+    {
+      id:'3',
+      from :'Frances Rossini',
+      message:'Kindly reminding you to post Friday report.',
+      date:'2024-04-26',
+      time:'12:00 PM',
+      seen:false
+    },
+    {
+      id:'4',
+      from :'Clifford Ferrara',
+      message:'Kindly reminding you to post Friday report.',
+      date:'2024-04-26',
+      time:'10:00 AM',
+      seen:false
+    }
+  ]
+
+  const mails = [
+    {
+      id:'1',
+      from:'Stark Arya',
+      time:'1:00 AM',
+      date:'2024-06-12',
+      checked:false
+    },
+    {
+      id:'2',
+      from:'Targaryen Daenerys',
+      time:'1:00 AM',
+      date:'2024-06-12',
+      checked:true
+    },
+    {
+      id:'3',
+      from:'Roxie Hervey',
+      time:'1:00 AM',
+      date:'2024-06-12',
+      checked:true
+    }
+  ]
+  const updates = [
+    {
+      id:'1',
+      title:'WE ARE HIRING!',
+      subject:'Life has many aspects and one of the most important sides of it is having a good job. But what is a good job? That is a hard question to answer with one or two words because every person has his or her own perspective in answering this question. Some people see a good job as having a good income, others look at it as low working hours, while others just look to job as they are meant to do it. A job that is with high payment and brings the happiness, passion to workers are the factors which are appreciated the most by most of people.',
+      time:'10:00 AM',
+      date:'2024-04-12'
+    },
+    {
+      id:'2',
+      title:'CLEANING IS IMPORTANT!',
+      subject:'Life has many aspects and one of the most important sides of it is having a good job. But what is a good job? That is a hard question to answer with one or two words because every person has his or her own perspective in answering this question. Some people see a good job as having a good income, others look at it as low working hours, while others just look to job as they are meant to do it. A job that is with high payment and brings the happiness, passion to workers are the factors which are appreciated the most by most of people.',
+      time:'12:00 AM',
+      date:'2024-01-20'
+    },
+    {
+      id:'3',
+      title:'OUR COMPANY IS INVITING NEW INVESTORS!',
+      subject:'Life has many aspects and one of the most important sides of it is having a good job. But what is a good job? That is a hard question to answer with one or two words because every person has his or her own perspective in answering this question. Some people see a good job as having a good income, others look at it as low working hours, while others just look to job as they are meant to do it. A job that is with high payment and brings the happiness, passion to workers are the factors which are appreciated the most by most of people.',
+      time:'5:00 AM',
+      date:'2024-02-30'
+    }
+  ]
+
+export {monitorData , links , GraphData , rows , columns , messages , mails , updates}

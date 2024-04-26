@@ -47,7 +47,7 @@ const LineChart = ({data , mode}:any) => {
       
       text: {
         fontSize: 11,
-        fill: mode == 'light' ? `#000000` : `#ffffff`,
+        fill: "#ffffff",
         outlineWidth: 0,
         outlineColor: "transparent"
       },

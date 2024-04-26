@@ -5,10 +5,9 @@ import { rows } from '../data/data';
 import { columns } from '../data/data';
 
 
-
 export default function DataGridDemo() {
   return (
-    <Box sx={{ height: 600, width: '100%' }}>
+    <Box sx={{ height: 600, width: '100%', marginTop:'30px' }}>
       <DataGrid
         rows={rows}
         columns={columns}

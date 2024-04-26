@@ -8,6 +8,8 @@ import {ContextProvider} from './context/contextProvider'
 import Schedule from './pages/Schedule.tsx'
 import Data from './pages/Data.tsx'
 import Member from './pages/Members.tsx'
+import Noti from './pages/Noti.tsx'
+import Update from './pages/News.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -21,6 +23,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Route path='/Schedule' element={<Schedule/>}></Route>
       <Route path='/data' element={<Data/>}></Route>
       <Route path='/members' element={<Member/>}></Route>
+      <Route path='/noti' element={<Noti/>}></Route>
+      <Route path='/update' element={<Update/>}></Route>
     </Routes>
     </BrowserRouter>
     </ContextProvider>

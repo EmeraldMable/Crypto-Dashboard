@@ -13,13 +13,15 @@ const Data=() => {
     const graphContext = useContext(StateContext)
     return (
        <div className='data'>
-         <h2 className='ibm-plex-sans-condensed-semibold text-center text-3xl'>Data</h2>
-         <div className='line-chart'>
-           
+         
+         <div className='line-chart mt-2'>
+         <h2 className='ibm-plex-sans-condensed-semibold  text-center text-3xl'>Data</h2>
             <LineChart data={data} mode={graphContext?.mode}/>
         </div>
        </div>
     )
 }
+
+
 
 export default Data

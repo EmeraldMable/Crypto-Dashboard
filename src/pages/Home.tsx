@@ -19,8 +19,8 @@ function App() {
 
   return (
     <>
-    <div className=' mx-4 lg:mx-16 my-4 md:mx-10 '>
-      <h1 className='ibm-plex-sans-condensed-semibold text-center text-3xl'>Dashboard</h1>
+    <div className=' mx-4 lg:mx-16 my-8 md:mx-10 '>
+      <h1 className='ibm-plex-sans-condensed-semibold text-white text-3xl'>Dashboard</h1>
       <Monitor/>
     </div>
 

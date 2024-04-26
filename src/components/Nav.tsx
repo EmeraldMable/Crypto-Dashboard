@@ -1,6 +1,6 @@
 
 import { MdOutlineLocationSearching } from "react-icons/md";
-import { CiMail } from "react-icons/ci";
+import { TbMessageCircle2Filled } from "react-icons/tb";
 import { MdNotifications } from "react-icons/md";
 import { useContext } from "react";
 import { StateContext } from "../context/contextProvider";
@@ -12,7 +12,7 @@ const Nav = () => {
    
    
   return (
-    <div className="nav mx-1 my-1 md:mx-4 lg:mx-6 relative">
+    <div className="nav mx-1 pt-5 md:mx-4 lg:mx-6 relative">
         <div id="menu" onClick={() => states?.setSidebar(!states.sidebar)} >
             <span className="first-bar"></span>
             <span className="second-bar"></span>
@@ -38,7 +38,7 @@ const Nav = () => {
         </div>
         :
         <div className="icon w-8 transition-transform ease-in-out">
-              <MdOutlineLocationSearching style={{marginRight:'10px'}} size={20}
+              <MdOutlineLocationSearching style={{marginRight:'10px' , color:'white'}} size={20}
                 className="hover:scale-125"
               onClick={() => states?.setClicksearch(!states.clicksearch)}/>
               <p className="tooltip">Search</p>
@@ -47,16 +47,20 @@ const Nav = () => {
        
       
           <div className="icon2 relative">
-          <CiMail size={26} className="hover:scale-125 transition-transform ease-in-out"/>
-          <p className="tooltip2">Mails</p>
+          <p className="noti-nu absolute -top-1 left-3 ">5</p>
+         <Link to='/messages'>
+         <TbMessageCircle2Filled size={26}
+         style={{color:'white'}} className="hover:scale-125 transition-transform ease-in-out"/>
+         </Link>
+          <p className="tooltip2">Messages</p>
           </div>
         
         <div className="icon3 relative">
          
           <div>
-          <p className="noti-nu absolute -top-1 left-5">3</p>
+          <p className="noti-nu absolute -top-1 left-5 ">3</p>
           <Link to='/noti'>
-          <MdNotifications size={26} style={{marginLeft:'8px' , marginRight:'8px'}} 
+          <MdNotifications size={26} style={{marginLeft:'8px' , marginRight:'8px' , color:'white'}} 
           className="hover:scale-125 transition-transform ease-in-out"/>
          </Link>
         </div>
@@ -64,7 +68,7 @@ const Nav = () => {
         </div>
         <div className="icon4 relative">
         <div className=" w-10 rounded-full relative hover:scale-125 dark:border-white transition-transform ease-in-out">
-        <img className="rounded-full border-2 border-black" src="https://variety.com/wp-content/uploads/2021/12/Bitcoin-Cryptocurrency-Placeholder.jpg" alt="profile pic" />
+        <img className="rounded-full border-2 border-white" src="https://variety.com/wp-content/uploads/2021/12/Bitcoin-Cryptocurrency-Placeholder.jpg" alt="profile pic" />
        
         </div>
         <p className="tooltip4">Profile</p>
