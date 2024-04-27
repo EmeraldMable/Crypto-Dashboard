@@ -9,7 +9,7 @@ const News = () => {
     <div className="update w-full p-10">
         {
             updates.map((update) => (
-                <div className="news"> 
+                <div className="news" key={update.id}> 
                    <div className="flex ">
                    <h2 className="flex-1 mb-2 tracking-wide text-xl">{ update.title}</h2>
                     <div className="flex gap-5">

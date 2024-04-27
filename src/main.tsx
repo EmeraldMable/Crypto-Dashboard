@@ -10,6 +10,8 @@ import Data from './pages/Data.tsx'
 import Member from './pages/Members.tsx'
 import Noti from './pages/Noti.tsx'
 import Update from './pages/News.tsx'
+import Help from './pages/Helpme.tsx'
+import Message from './pages/Message.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -25,6 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
       <Route path='/members' element={<Member/>}></Route>
       <Route path='/noti' element={<Noti/>}></Route>
       <Route path='/update' element={<Update/>}></Route>
+      <Route path='/help' element={<Help/>}></Route>
+      <Route path='/messages/:id' element={<Message/>}></Route>
     </Routes>
     </BrowserRouter>
     </ContextProvider>

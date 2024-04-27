@@ -17,6 +17,8 @@ type StateContextType = {
     setDate: React.Dispatch<any>
     events: any
     setEvents: React.Dispatch<React.SetStateAction<any>>
+    current: number
+    setCurrent: React.Dispatch<React.SetStateAction<number>>
 }
 
 function getDate() {
@@ -49,6 +51,8 @@ export const ContextProvider = ({children}:StateContextProviderProps) => {
    const selectedTheme = localStorage.getItem('theme')
    const [mode, setMode] = useState(selectedTheme)
     const [events, setEvents] = useState(eventData)
+   const [current, setCurrent] = useState(0)
+  
 
    useEffect(() => {
      document.querySelector('#root')?.setAttribute('data-theme' , `${selectedTheme}`)
@@ -66,7 +70,9 @@ export const ContextProvider = ({children}:StateContextProviderProps) => {
             date, 
             setDate,
             events, 
-            setEvents
+            setEvents,
+            current, 
+            setCurrent
         }}>
             {children}
         </StateContext.Provider>
