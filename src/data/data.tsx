@@ -1034,7 +1034,7 @@ const geodata = [
       width:200,
       headerAlign:'center',
       align:'center',
-      renderCell:({row:{Email}}) => {
+      renderCell:({row:{Email}}:any) => {
         return (
           <ListItem>
             <Link className="hover:underline" to={`mailto:${Email}`}>{Email}</Link>
@@ -1053,12 +1053,16 @@ const geodata = [
           send:'Please prepare refreshment for tomorrow meeting.',
           date:'2024-04-27',
           time:'1:00 PM',
+          dateReply:'2024-04-27',
+          timeReply:'1:30 PM',
           answer:'Noted'
         } ,
         {
           send:'Need moring report on this coming monday.',
           date:'2024-04-28',
           time:'4:00 PM',
+          dateReply:'2024-04-27',
+          timeReply:'1:30 PM',
           answer:'I will work on it.'
         }
       ],
@@ -1074,12 +1078,16 @@ const geodata = [
           send:'Can you please send me notes for the coming meeting.',
           date:'2024-04-23',
           time:'10:00 AM',
+          dateReply:'2024-04-23',
+          timeReply:'10:30 AM',
           answer:'OK'
         } ,
         {
           send:'What is the inspiration?',
           date:'2024-04-28',
           time:'2:00 PM',
+          dateReply:'2024-04-29',
+          timeReply:'10:30 AM',
           answer:'Summer cool style'
         }
       ],
@@ -1094,12 +1102,16 @@ const geodata = [
           send:'Can you help me with the interview as we are short of interviewers.',
           date:'2024-04-22',
           time:'8:00 AM',
+          dateReply:'2024-04-22',
+          timeReply:'1:30 PM',
           answer:'I am sorry. My plate is quite full too.'
         } ,
         {
           send:'Please come to the meeting before 10:00 ',
           date:'2024-04-28',
           time:'8:00 AM',
+          dateReply:'2024-04-28',
+          timeReply:'9:30 PM',
           answer:'Noted'
         }
       ],
@@ -1114,12 +1126,16 @@ const geodata = [
           send:'Night shifts are up to 12:00. right?',
           date:'2024-04-22',
           time:'11:00 PM',
+          dateReply:'2024-04-22',
+          timeReply:'12:30 AM',
           answer:'Yes, my friend.'
         } ,
         {
           send:'Let\'s have lunch together.',
           date:'2024-04-28',
           time:'10:00 AM',
+          dateReply:'2024-04-28',
+          timeReply:'11:30 AM',
           answer:'cool.'
         }
       ],

@@ -185,6 +185,9 @@
   background-color: var(--monitor-color);
   color:black
 }
+.fc-multimonth-header-table{
+  color: var(--background-color);
+}
 .fc-list-day{
   color:black
 }
@@ -418,7 +421,7 @@
  
 }
 .seen{
-  width: 100px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 1px solid var(--seen-color);
@@ -428,7 +431,7 @@
   justify-content: center;
 }
 .new{
-  width: 100px;
+  width: 50px;
   height: 50px;
   border-radius: 50%;
   border: 3px solid var(--seen-color); 
@@ -521,8 +524,11 @@
 }
 .message-box{
   max-width: 900px;
-  max-height: 460px;
-  
+  max-height: 600px;
+  background-color: rgba(255, 255, 255,.1);
+  backdrop-filter: blur(20px);
+  padding: 2rem 2rem;
+  overflow-y: auto;
 }
 .send-message , .reply-message{
   background-color: var(--monitor-color);
@@ -551,7 +557,7 @@
   
   height: 50px;
   border-radius: 20px;
-  width: 100%;
+  width: 90%;
 }
 .active{
 transform: scale(1.3);

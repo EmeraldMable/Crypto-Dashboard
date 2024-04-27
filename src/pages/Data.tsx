@@ -4,12 +4,16 @@ import LineChart from '../components/LineChart'
 import { StateContext } from '../context/contextProvider'
 import { useContext } from 'react'
 import Geo from '../components/Geo'
+import Breadcrumb from '../components/Breadcrumb'
 
 const Data=() => {
     const graphContext = useContext(StateContext)
     return (
-       <div className='data mt-5 '>
-           <h2 className='ibm-plex-sans-condensed-semibold  text-center text-3xl mb-10'>Data</h2>
+       <div className='data'>
+        <div className='mx-4 lg:mx-16 mt-5 md:mx-10'>
+        <Breadcrumb />
+        </div>
+           <h2 className='ibm-plex-sans-condensed-semibold mx-4 lg:mx-16 mt-3 md:mx-10 text-4xl mb-8'>Data</h2>
          <div className='line-chart mt-2 mx-5'>
          <h2 className='ibm-plex-sans-condensed-regular text-xl pl-8'>Report Graph</h2>
             <LineChart data={data} mode={graphContext?.mode}/>

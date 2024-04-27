@@ -1,11 +1,7 @@
 import { ResponsiveChoropleth } from '@nivo/geo'
 
-// make sure parent container have a defined height when using
-// responsive component, otherwise height will be 0 and
-// no chart will be rendered.
-// website examples showcase many properties,
-// you'll often use just a few of them.
-const Geo = ({ data , features , dashboard}) => (
+
+const Geo = ({ data , features , dashboard} :any) => (
     <ResponsiveChoropleth
         data={data}
         features={features.features}
@@ -37,60 +33,8 @@ const Geo = ({ data , features , dashboard}) => (
             }
           }}
          
-        defs={[
-            {
-                id: 'dots',
-                type: 'patternDots',
-                background: 'inherit',
-                color: '#38bcb2',
-                size: 4,
-                padding: 1,
-                stagger: true
-            },
-            {
-                id: 'lines',
-                type: 'patternLines',
-                background: 'inherit',
-                color: '#eed312',
-                rotation: -45,
-                lineWidth: 6,
-                spacing: 10
-            },
-            {
-                id: 'gradient',
-                type: 'linearGradient',
-                colors: [
-                    {
-                        offset: 0,
-                        color: '#000'
-                    },
-                    {
-                        offset: 100,
-                        color: 'inherit'
-                    }
-                ]
-            }
-        ]}
-        fill={[
-            {
-                match: {
-                    id: 'CAN'
-                },
-                id: 'dots'
-            },
-            {
-                match: {
-                    id: 'CHN'
-                },
-                id: 'lines'
-            },
-            {
-                match: {
-                    id: 'ATA'
-                },
-                id: 'gradient'
-            }
-        ]}
+       
+        
         legends={[
             {
                 anchor: 'bottom-left',

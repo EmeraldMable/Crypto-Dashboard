@@ -5,11 +5,10 @@ import { PiArrowBendLeftDownBold } from "react-icons/pi";
 
 type propsType = {
     title:String,
-    icon:React.ReactElement[],
+    icon:React.ReactElement<any>,
     percentage:string,
     rate:string,
-    number:string,
-    padding:string
+    number:string
 }
 
 const MonitorDetails = ({title, icon, percentage, rate , number }:propsType) => {

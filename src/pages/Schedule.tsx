@@ -7,13 +7,14 @@ import interactionPlugin from '@fullcalendar/interaction'
 import multiMonthPlugin from '@fullcalendar/multimonth'
 import { StateContext } from '../context/contextProvider';
 import { useContext } from 'react';
+import Breadcrumb from '../components/Breadcrumb';
 
 
 const Schedule = () => {
     const scheduleContext = useContext(StateContext)
 
 
-    const handleClick = (selected) => {
+    const handleClick = (selected:any) => {
         const title = prompt('Please enter the title of the event.')
         const calendarAPi = selected.view.calendar;
         calendarAPi.unselect()
@@ -38,8 +39,9 @@ const Schedule = () => {
    
  
   return (
-    <div className='calendar mx-0 md:mx-10 my-4'>
-       
+    <div className='mx-2 md:mx-10 my-4'>
+        <Breadcrumb/>
+        <div className='calendar mx-0 md:mx-10 my-4'>
         <FullCalendar
         plugins={[dayGridPlugin,timeGridPlugin,listPlugin,interactionPlugin, multiMonthPlugin]}
         initialView={'timeGridDay'}
@@ -61,6 +63,7 @@ const Schedule = () => {
             {id:'2', title:'Report', start:'2024-04-28'}
         ]}
         />
+    </div>
     </div>
   )
 }

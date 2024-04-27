@@ -1,10 +1,12 @@
 import { messages , mails } from "../data/data"
 import { Link } from "react-router-dom"
+import Breadcrumb from "../components/Breadcrumb"
 
 const Noti = () => {
   return (
     <div className=' mx-4 lg:mx-12 mt-10 md:mx-10 '>
-      <h1 className='ibm-plex-sans-condensed-semibold  text-3xl text-white'>Notifications</h1>
+      <Breadcrumb/>
+      <h1 className='ibm-plex-sans-condensed-semibold mt-3 text-3xl text-white'>Notifications</h1>
       
 
       <div className="flex gap-5 flex-col lg:flex-row overflow-auto relative">
@@ -21,15 +23,13 @@ const Noti = () => {
                 <span>From</span>
                 <p className=" pl-6 w-full">{message.from}</p>
               </div>
-               {
-                message.messages?.map((each,index) => (
-                 <div key={index}>
-                     <p className=" w-full">{each.send.slice(0,20)}...</p>
-                  <p className="w-2/3">{each.time}</p>
-                  <p className="w-2/3">{each.date}</p>
+               
+                 <div className="flex-1" >
+                     <p className="w-full ">{message.messages[0].send.slice(0,60)}...</p>
+                  <p className="opacity-50">{message.messages[0].time}</p>
+                  <p className="opacity-50" >{message.messages[0].date}</p>
                  </div>
-                ))
-               }
+                
                 {
                   message.seen == true ?
                   <p className="seen mr-5">Seen</p>
@@ -54,8 +54,8 @@ const Noti = () => {
              
              
                 <div className="flex gap-10">
-                <p className=" opacity-85">{mail.time}</p>
-                <p className=" opacity-85">{mail.date}</p>
+                <p className=" opacity-50">{mail.time}</p>
+                <p className=" opacity-50">{mail.date}</p>
                 </div>
                 </div>
             </div>

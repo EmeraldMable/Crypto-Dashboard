@@ -12,6 +12,7 @@ import { GraphData as data , updates , geodata , features} from '../data/data'
 import Button from '../components/Button'
 import { GoPlusCircle } from "react-icons/go";
 import Geo from '../components/Geo'
+import Breadcrumb from '../components/Breadcrumb'
 
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
   return (
     <>
     <div className=' mx-4 lg:mx-16 my-8 md:mx-10 '>
+      <Breadcrumb/>
      <div className='flex'>
      <h1 className='ibm-plex-sans-condensed-semibold text-white text-3xl flex-1'>Dashboard</h1>
       <Button type='Add New' className='button mx-6 text-sm p-2 hover:scale-95 cursor-pointer' icon={<GoPlusCircle/>}/>
@@ -40,7 +42,7 @@ function App() {
    <Link className='data-link h-80 flex-1 gap-3 mb-10 lg:mx-5 '
    to='/data'>
     
-   <LineChart data={data} mode={states?.mode}/>
+   <LineChart data={data} />
    <p className='link-tooltip absolute -bottom-4'> Click to go to Data</p>
    </Link>
    
@@ -50,7 +52,7 @@ function App() {
     <RxDrawingPinFilled className='absolute left-8 top-3 ' size={20}/>My Schedule</h2>
     <p className='schedule-tooltip z-50'> Click to go to Calender</p>
     {
-      states?.events.map((event) => (
+      states?.events.map((event:any) => (
         <div className='addtodo z-40 mb-1' key={event.id}>
           <p>{event.title}</p>
           <p>{formatDate(event.start)}</p>

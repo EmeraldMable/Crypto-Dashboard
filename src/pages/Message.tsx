@@ -4,12 +4,14 @@ import Button from '../components/Button'
 import { IoMdSend } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { SiTicktick } from "react-icons/si";
+import Breadcrumb from '../components/Breadcrumb';
 
 const Message = () => {
     const param = useParams()
     
   return (
     <div className=' mx-4 mt-5 lg:mx-16 md:mx-10 pb-10'>
+      <Breadcrumb/>
         <h1 className='ibm-plex-sans-condensed-semibold mb-5 text-white text-3xl flex-1'>Message box</h1>
        <div className='flex flex-col lg:flex-row'>
         <div className='flex lg:block w-30 relative gap-6'>
@@ -28,35 +30,42 @@ const Message = () => {
         </div>
 
 
-        <div className='message-box mt-1 lg:mt-10 lg:mx-56 mb-12 rounded-md mx-5 relative lg:flex-1 overflown-auto'>
+        <div className='message-box mt-10 lg:mt-10 lg:mx-20 mb-10 rounded-md mx-5 relative lg:flex-1 '>
           {
             messages.map((message) => message.id == param.id ?
             <>
              {message.messages?.map((each,index) => (
              
               <>
-           <div className='flex items-center gap-2 mb-12 mt-6 justify-end'>
-          
-           <div className='send-message p-3 rounded-2xl ' key={index}>
+            <p className='text-center text-white mb-10 opacity-80'>{each.date}</p>
+           <div className='flex gap-2 mb-5 mt-3 justify-end' key={index}>
+         
+          <div>
+          <div className='send-message p-3 rounded-2xl ' >
                
-                  {each.send}
-                 
-            </div>
-            <img className='w-10 h-10 rounded-full' src={message.profile} alt="member photo" />
-            
-            
+               {each.send}
+              
+         </div>
+         <span className='text-white mt-1 opacity-50'>{each.time}</span>
+          </div>
+         
+          <img className='w-10 h-10 rounded-full' src={message.profile} alt="member photo" />
+      
            </div>
+          
 
-          <div className='flex items-center gap-3 mb-12 ' key={index}>
+          <div className='flex items-center gap-3 mb-6 ' >
           <img className=' w-10 h-10 rounded-full' src='https://variety.com/wp-content/uploads/2021/12/Bitcoin-Cryptocurrency-Placeholder.jpg' alt="member photo" />
 
 
-          <div className='reply-message  p-3 rounded-2xl' key={index}>
+         <div>
+         <div className='reply-message p-3 rounded-2xl'>
                   
-              {each.answer}
-                    
-            </div>
-            
+                  {each.answer}
+                        
+                </div>
+                <span className='text-white mt-1 opacity-50'>{each.time}</span>
+         </div>
           </div>
              
          </>
@@ -71,8 +80,8 @@ const Message = () => {
         
        </div>
       
-       <div className='search-box flex justify-center '>
-        <input type='type'  className="ibm-plex-sans-condensed-regular outline-none pl-5 w-1/2" id='send-box'
+       <div className='search-box flex justify-center mx-5 md:mx-7 lg:mx-10'>
+        <input type='type'  className="ibm-plex-sans-condensed-regular outline-none pl-5 w-2/3" id='send-box'
         placeholder="Search"/>
           <Button type='Send' className='send-button mx-2 text-sm hover:scale-75 transition-transform ease-in-out' icon={<IoMdSend/>}/>
         </div>

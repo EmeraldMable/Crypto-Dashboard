@@ -1,9 +1,11 @@
 import { updates } from "../data/data"
+import Breadcrumb from "../components/Breadcrumb"
 
 const News = () => {
   return (
     <div className=' mx-4 lg:mx-16 my-4 md:mx-10 '>
-    <h1 className='ibm-plex-sans-condensed-semibold mb-4 mt-8 text-3xl text-white'>News & Updates</h1>
+      <Breadcrumb/>
+    <h1 className='ibm-plex-sans-condensed-semibold mb-4 mt-2 text-3xl text-white'>News & Updates</h1>
     
 
     <div className="update w-full p-10">

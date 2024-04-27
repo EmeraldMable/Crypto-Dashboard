@@ -1,11 +1,10 @@
-import { useContext, useEffect, useRef } from "react"
 
-import { StateContext } from "../context/contextProvider"
 import MonitorDetails from "./MonitorDetails"
 import { MdOutlineShoppingCartCheckout } from "react-icons/md";
 import { FaDollarSign } from "react-icons/fa6";
 import { GoPeople } from "react-icons/go";
 import { GiTrafficLightsReadyToGo } from "react-icons/gi";
+
 
 
 const Monitor = () => {

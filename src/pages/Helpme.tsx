@@ -3,13 +3,15 @@ import { IoMdArrowDropup } from "react-icons/io";
 import { IoMdArrowDropdown } from "react-icons/io";
 import { StateContext } from "../context/contextProvider";
 import { useContext } from "react";
+import Breadcrumb from "../components/Breadcrumb";
 
 const Helpme = () => {
    const HelpContext = useContext(StateContext)
    
   return (
     <div className=' mx-4 lg:mx-16 my-8 md:mx-10 '>
-        <h1 className='ibm-plex-sans-condensed-semibold text-white text-3xl'>User Guide</h1>
+      <Breadcrumb/>
+        <h1 className='ibm-plex-sans-condensed-semibold text-white text-3xl mt-2'>User Guide</h1>
         <div className="help">
         
             {

@@ -1,6 +1,6 @@
 import { ResponsiveLine } from '@nivo/line'
 
-const LineChart = ({data , mode}:any) => {
+const LineChart = ({data }:any) => {
   return (
     
     <ResponsiveLine
