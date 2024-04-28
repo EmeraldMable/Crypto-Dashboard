@@ -1,30 +1,27 @@
-# React + TypeScript + Vite
+# Dashboard UI 
+Live demo click here https://dashboard-ui-039z.onrender.com
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Table of contents
+* General info
+* Framework and library
 
-Currently, two official plugins are available:
+## General info
+What is it about? \
+    This project is creating dashboard UI which can be used for many purposes. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+What kind of design did I choose for UI? \
+    I choose neat and tidy UI design.
 
-## Expanding the ESLint configuration
+Why did I choose it? \
+   As I want to be a frontend web developer, building UI and coding layout are the main demands. That is why I built this project to show that I am capable of. 
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+What did I gain from building this project? \
+   I got to learn more about layout structure and how to implement graphs and data grids. 
 
-- Configure the top-level `parserOptions` property like this:
+## Framework and library
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+It is created with \
+Frontend - react (vite), tailwind css , nivo charts , MUI data grids and full calendar 
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+
+ 
