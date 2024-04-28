@@ -21,7 +21,7 @@ What did I gain from building this project? \
 ## Framework and library
 
 It is created with \
-Frontend - react (vite), tailwind css , nivo charts , MUI data grids and full calendar 
+Frontend - react-typescript (vite), tailwind css , nivo charts , MUI data grids and full calendar 
 
 
  
