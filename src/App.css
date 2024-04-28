@@ -186,7 +186,10 @@
   color:black
 }
 .fc-multimonth-header-table{
-  color: var(--background-color);
+  color: #ffffff;
+}
+.fc-multimonth-title{
+  color:#ffffff
 }
 .fc-list-day{
   color:black
