@@ -181,16 +181,15 @@
 .fc-dayGridMonth-view{
   color: #ffffff;
 }
-.fc-multiMonthYear-view{
+.fc-multiMonthYear-view .fc-multimonth-singlecol{
   background-color: var(--monitor-color);
   color:black
 }
-.fc-multimonth-header-table{
-  color: #ffffff;
+.fc-multiMonthYear-view .fc-multimonth-multicol{
+  background-color: var(--monitor-color);
+  color:rgb(255, 255, 255)
 }
-.fc-multimonth-title{
-  color:#ffffff
-}
+
 .fc-list-day{
   color:black
 }
