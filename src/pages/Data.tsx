@@ -11,6 +11,7 @@ const Data=() => {
     const graphContext = useContext(StateContext)
     useEffect(() => {
       window.scrollTo(0,0)
+   
     },[])
     return (
        <div className='data'>

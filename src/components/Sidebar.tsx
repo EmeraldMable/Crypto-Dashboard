@@ -1,7 +1,7 @@
 import { IoMdCloseCircle } from "react-icons/io";
 import { NavLink } from "react-router-dom";
 import { StateContext } from "../context/contextProvider";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import {links} from '../data/data'
 
 const Sidebar = () => {
@@ -23,6 +23,13 @@ const Sidebar = () => {
     sidebar?.setSidebar(false)
   }
 
+  useEffect(() => {
+    if(sidebar?.sidebar){
+      document.body.style.overflowY = 'hidden'
+   }else{
+      document.body.style.overflowY = 'scroll'
+   }
+  })
  
 
  
