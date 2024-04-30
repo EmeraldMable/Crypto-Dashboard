@@ -8,11 +8,14 @@ import multiMonthPlugin from '@fullcalendar/multimonth'
 import { StateContext } from '../context/contextProvider';
 import { useContext } from 'react';
 import Breadcrumb from '../components/Breadcrumb';
+import { useEffect } from 'react';
 
 
 const Schedule = () => {
     const scheduleContext = useContext(StateContext)
-
+    useEffect(() => {
+        window.scrollTo(0,0)
+      },[])
 
     const handleClick = (selected:any) => {
         const title = prompt('Please enter the title of the event.')

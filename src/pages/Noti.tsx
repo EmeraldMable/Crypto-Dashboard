@@ -1,8 +1,12 @@
 import { messages , mails } from "../data/data"
 import { Link } from "react-router-dom"
 import Breadcrumb from "../components/Breadcrumb"
+import { useEffect } from "react"
 
 const Noti = () => {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className=' mx-4 lg:mx-12 mt-10 md:mx-10 '>
       <Breadcrumb/>

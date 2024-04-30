@@ -20,6 +20,7 @@ function App() {
   console.log(states?.events)
     useEffect(() => {
       states?.setSidebar(false)
+      window.scrollTo(0,0)
     },[])
 
   return (

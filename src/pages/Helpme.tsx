@@ -4,10 +4,13 @@ import { IoMdArrowDropdown } from "react-icons/io";
 import { StateContext } from "../context/contextProvider";
 import { useContext } from "react";
 import Breadcrumb from "../components/Breadcrumb";
+import { useEffect } from "react";
 
 const Helpme = () => {
    const HelpContext = useContext(StateContext)
-   
+   useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
   return (
     <div className=' mx-4 lg:mx-16 my-8 md:mx-10 '>
       <Breadcrumb/>

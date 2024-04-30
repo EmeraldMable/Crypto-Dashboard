@@ -5,9 +5,13 @@ import { IoMdSend } from "react-icons/io";
 import { Link } from 'react-router-dom';
 import { SiTicktick } from "react-icons/si";
 import Breadcrumb from '../components/Breadcrumb';
+import { useEffect } from 'react';
 
 const Message = () => {
     const param = useParams()
+    useEffect(() => {
+      window.scrollTo(0,0)
+    },[])
     
   return (
     <div className=' mx-4 mt-5 lg:mx-16 md:mx-10 pb-10'>

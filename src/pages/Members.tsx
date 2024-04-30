@@ -6,8 +6,12 @@ import { columns } from '../data/data';
 import Button from '../components/Button';
 import { GoPlusCircle } from "react-icons/go";
 import Breadcrumb from '../components/Breadcrumb';
+import { useEffect } from 'react';
 
 export default function DataGridDemo() {
+  useEffect(() => {
+    window.scrollTo(0,0)
+  },[])
   return (
     <>
    <div className='mx-4 lg:mx-16 my-8 md:mx-10'>
