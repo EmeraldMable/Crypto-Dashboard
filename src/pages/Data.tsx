@@ -5,9 +5,13 @@ import { StateContext } from '../context/contextProvider'
 import { useContext } from 'react'
 import Geo from '../components/Geo'
 import Breadcrumb from '../components/Breadcrumb'
+import { useEffect } from 'react'
 
 const Data=() => {
     const graphContext = useContext(StateContext)
+    useEffect(() => {
+      window.scrollTo(0,0)
+    },[])
     return (
        <div className='data'>
         <div className='mx-4 lg:mx-16 mt-5 md:mx-10'>
